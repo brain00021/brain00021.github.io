@@ -1,20 +1,51 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted ,ref} from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 // import Alert from 'bootstrap/js/dist/alert';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // import {Email} from './assets/smtp/smtp.js'
 import Header from './components/Header.vue';
-
+import Dialog from'./components/Dialog.vue'
 // Import Swiper styles
 import 'swiper/css';
+const currentDialog = ref(null)
+const currentYtSetDom = ref(null);
+const dialogLink = ref(null);
+const dialogYt = ref(null);
 const onSwiper = (swiper) => {
         console.log(swiper);
       };
       const onSlideChange = () => {
         console.log('slide change');
       };
+const dialogSet = (dialogSet) => {
+  console.log('dialogSet',dialogSet);
+  const {url,id,currentYtDom} = dialogSet;
 
+  currentDialog.value.show();
+  dialogLink.value = url;
+  if(Array.isArray(currentYtDom.value)){
+    currentYtSetDom.value = currentYtDom.value;
+    currentYtDom.value.forEach((video) => {
+      video.pauseVideo()
+    })
+  }else{
+    currentYtSetDom.value = currentYtDom;
+    currentYtDom?.pauseVideo()
+  }
+
+}
+const close = (event) => {
+  dialogYt.value.pauseVideo();
+  if(Array.isArray(currentYtSetDom.value)){
+    currentYtSetDom.value.forEach((video) => {
+      video.playVideo()
+    })
+  }else{
+    currentYtSetDom.value?.playVideo()
+  }
+
+}
 // onMounted(() => {
 //   Email.send({
 //     SecureToken : "117E87BAE0221CA4E5DDCCD5A3B0CFEFE1400E9577476B72FCCBBEED56A9D0A5E6354B002D4BAA7F4DCB29E46728EB04",
@@ -45,9 +76,22 @@ const onSwiper = (swiper) => {
       寄信給abc@gmail.com並帶上主旨
     </a>
   </div> -->
+  <Dialog ref="currentDialog" @close="close">
+    <VueYtframe
+      class="dialog-video"
+      ref="dialogYt"
+      :playerVars="{
+        controls:0,
+        showinfo:0,
+        rel:0,
+        autoplay:1,
+      }"
+      :videoUrl="dialogLink"
+    />
+  </Dialog>
   <Header></Header>
   <main>
-    <router-view />
+    <router-view  @dialogSet="dialogSet" />
   </main>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <swiper

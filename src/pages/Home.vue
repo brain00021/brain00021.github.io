@@ -1,75 +1,104 @@
+
 <script setup>
-    import {ref} from "vue"
-    import Dialog from'../components/Dialog.vue'
-    // import { YoutubeIframe } from '@vue-youtube/component';
-    let data = [{
-        videos:[{
+    import {ref,computed,onMounted, } from "vue"
+    // import Dialog from'../components/Dialog.vue'
+    import data from '../assets/data/allData.js'
+    import {
+    Keyboard,
+    Mousewheel,
+  } from 'swiper/modules'
+    import {
+      Swiper,
+      SwiperSlide,
+  } from 'swiper/vue';
+  // SwiperCore.use([Keyboard, Mousewheel])
 
+  const  modules = [Keyboard, Mousewheel]
+  const yt = ref(null)
+  const dialogYt = ref(null);
+  const dialogLink = ref(null)
+  const homeVideosDialog = ref(null)
+  const lists = ref(null)
+  const emit = defineEmits(['dialogSet'])
 
-        }]
-    }]
-    const yt = ref(null)
-    const homeVideosDialog = ref(null)
-    
-    const onReady = (event) => {
+  const onStateChange = (event) => {
+    if (event.getPlayerState() === 1) {
+      // control the frames using the template reference
+      debugger
+      yt.value.forEach((video) => {
+          // if (video.getVideoUrl() !== event.getVideoUrl()) {
+          //   video.pauseVideo()
+          // }
+      })
+    }
+  }
+  
+  const openDialog = (url,id) => {
 
-      debugger;
-      yt.value.playVideo()
-    }
-    const onStateChange = (event) => {
-      if (event.getPlayerState() === 1) {
-        // control the frames using the template reference
-        debugger
-        yt.value.forEach((video) => {
-            // if (video.getVideoUrl() !== event.getVideoUrl()) {
-            //   video.pauseVideo()
-            // }
-        })
-      }
-    }
-    const test = (event) => {
-      homeVideosDialog.value.show();
-      yt.value.pauseVideo()
-    }
-    const close = (event) => {
-      yt.value.playVideo()
-    }
+    emit('dialogSet',{url,id,currentYtDom: yt})
+  }
+  // const close = (event) => {
+  //   dialogYt.value.pauseVideo();
+  //   console.log(dialogYt,'test')
+  //   yt.value.forEach((video) => {
+      
+  //     video.playVideo()
+  //   })
+  // }
+  onMounted(() =>{
+    lists.value = data.homeVideos;
+    console.log(lists.value,'test')
+  })
 </script>
 <template>
-    <Dialog ref="homeVideosDialog" @close="close">
+    <!-- <Dialog ref="homeVideosDialog" @close="close">
       <VueYtframe
         class="dialog-video"
-        ref="yt2"
-        :videoUrl="`https://www.youtube.com/embed/biWk-QLWY7U`"
-      />
-    </Dialog>
-    <div class="bg-video">
-      <div class="wrapper">
-          <div class="icon" @click="test">
-              <img src="../assets/logo.png" alt="">
-          </div>
-      </div>
-      <VueYtframe
-        class="bg-video__iframe"
-        ref="yt"
-        :videoUrl="`https://www.youtube.com/embed/biWk-QLWY7U`"
-        height="100vh"
+        ref="dialogYt"
         :playerVars="{
           controls:0,
           showinfo:0,
           rel:0,
           autoplay:1,
-          loop:1,
-          mute:1,
-          allowfullscreen:1
         }"
-        @ready="onReady"
+        :videoUrl="dialogLink"
       />
-        <!-- <iframe id="existing-iframe-example" class="bg-video__iframe" src="https://www.youtube.com/embed/biWk-QLWY7U?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe> -->
-        <!-- <youtube-iframe :video-id="YT_VIDEO_ID" :player-parameters="YT_PLAYER_PARAMS"></youtube-iframe>
-        <YoutubeIframe video-id="dQw4w9WgXcQ" @ready="onReady"  frameborder="0" allowfullscreen/> -->
+    </Dialog> -->
+    <swiper
+      :slides-per-view="1"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :modules="modules"
+      :mousewheel="true" 
+      :direction="'vertical'"
+    >
+      <swiper-slide v-for="(list,index) in lists" :key="index">      
+        <div class="bg-video">
+          <div class="wrapper"> 
+              <div class="icon" @click="openDialog(list.url,list.id)">
+                  <img class="logoPlayIcon" src="../assets/logo.png" alt="">
+              </div>
+          </div>
+          <VueYtframe
+            class="bg-video__iframe"
+            ref="yt"
+            :videoUrl="list.url"
+            height="100vh"
+            :playerVars="{
+              controls:0,
+              showinfo:0,
+              rel:0,
+              autoplay:1,
+              loop:1,
+              mute:1,
+              allowfullscreen:1
+            }"
+          />
+
         
-    </div>
+      </div>
+      </swiper-slide>
+    </swiper>
 </template>
 
 <style lang="scss">
@@ -84,6 +113,9 @@
   @media (max-aspect-ratio: 16/9) {
     --video-width: 177.78vh;
   }
+}
+.swiper{
+  height:100vh;
 }
 .dialog-video{
   width: fit-content;

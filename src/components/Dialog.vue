@@ -3,7 +3,8 @@
         <div class="dialog" v-show="openStatus">
             <div class="dialog-wrapper">
                 <div class="close" @click="hide">
-                <i class="bi bi-x-lg"></i>
+                    <i class="bi bi-x-lg"></i>
+                    <p>Close</p>
                 </div>
                 <slot></slot> 
             </div>
@@ -48,6 +49,17 @@ export default defineComponent({
     width:100px;
     color:#fff;
     font-weight:bold;
+    display: flex;
+    position: absolute;
+    right:-50px;
+    top:-50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size:20px;
+}
+.dialog-wrapper{
+    position: relative;
 }
 .dialog{
     position:fixed;
@@ -59,5 +71,9 @@ export default defineComponent({
     top:0;
     left:0;
     z-index: 999;
+    p{
+        margin-bottom:0;
+        margin-left:0.2em;
+    }
 }
 </style>

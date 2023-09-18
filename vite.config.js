@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import  path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/myscheduleproject/',
+  base:'/',
   plugins: [vue()],
   resolve: {
     alias: {

@@ -7,12 +7,14 @@ export default createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/myscheduleproject',
+      path: '/',
       component: Home,
+      name: 'Home'
     },
     {
       path: '/about',
       component:About,
+      name: 'About'
     },
     {
         path: '/404',
