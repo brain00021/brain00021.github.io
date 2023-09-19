@@ -98,6 +98,7 @@
 
     </div>
     <div class="banner" ref="thrid">
+      <h3>OFFICE ROOM TOUR</h3>
       <div class="bg-videos">
         <div class="wrapper"> 
           <div class="icon" @click="openDialog(lists?.[1].url,lists?.[1].id,yt2)">
@@ -129,6 +130,18 @@
   height:fit-content;
   width:100vw;
   background:#000;
+  h3{
+    color:#fff;
+    font-size:60pt;
+    position: absolute;
+    top:-150px;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align: center;
+    padding:1em 0;
+    z-index: 30;
+  }
   .description{
     background: rgba(#000,0.7);
     flex-direction: column;
@@ -161,7 +174,6 @@
   
   // min-height: 100vh;
   height:100vh;
-  overflow: hidden;
   opacity: 1;
   scroll-behavior: smooth;
 
@@ -176,23 +188,14 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  padding: 50px 0;
   .member-innder-wrapper{
     height:100%;
     position: relative;
     overflow: hidden;
     width:100%;
   }
-  h3{
-    color:#fff;
-    font-size:60pt;
-    position: absolute;
-    top:-150px;
-    left:0;
-    right:0;
-    margin:auto;
-    text-align: center;
-    padding:1em 0;
-  }
+
   .member{
     position: absolute;
     width:300px;

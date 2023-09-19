@@ -8,6 +8,7 @@
     Mousewheel,
   } from 'swiper/modules'
     import {
+      useSwiper,
       Swiper,
       SwiperSlide,
   } from 'swiper/vue';
@@ -15,6 +16,7 @@
 
   const  modules = [Keyboard, Mousewheel]
   const yt = ref(null)
+  const currentSwiper = useSwiper();
   const dialogYt = ref(null);
   const dialogLink = ref(null)
   const homeVideosDialog = ref(null)
@@ -47,7 +49,7 @@
   // }
   onMounted(() =>{
     lists.value = data.homeVideos;
-    console.log(lists.value,'test')
+    console.log(lists.value,'test',currentSwiper)
   })
 </script>
 <template>
@@ -64,44 +66,53 @@
         :videoUrl="dialogLink"
       />
     </Dialog> -->
-    <swiper
-      :slides-per-view="1"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
-      :modules="modules"
-      :mousewheel="true" 
-      :direction="'vertical'"
-    >
-      <swiper-slide v-for="(list,index) in lists" :key="index">      
-        <div class="bg-video">
-          <div class="wrapper"> 
-              <div class="icon" @click="openDialog(list.url,list.id)">
-                  <img class="logoPlayIcon" src="../assets/logo.png" alt="">
-              </div>
-          </div>
-          <VueYtframe
-            class="bg-video__iframe"
-            ref="yt"
-            :videoUrl="list.url"
-            height="100vh"
-            :playerVars="{
-              controls:0,
-              showinfo:0,
-              rel:0,
-              autoplay:1,
-              loop:1,
-              mute:1,
-              allowfullscreen:1
-            }"
-          />
+    <div class="home-page">
+      <swiper
+        ref="currentSwiper"
+        :slides-per-view="1"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+        :modules="modules"
+        :mousewheel="true"
+        :direction="'vertical'"
+      >
+        <swiper-slide v-for="(list,index) in lists" :key="index" :virtualIndex="index">      
+          <div class="bg-video">
+            <div class="wrapper"> 
+                <div class="icon" @click="openDialog(list.url,list.id)">
+                    <img class="logoPlayIcon" src="../assets/logo.png" alt="">
+                </div>
+            </div>
+            <VueYtframe
+              class="bg-video__iframe"
+              ref="yt"
+              :videoUrl="list.url"
+              height="100vh"
+              :playerVars="{
+                controls:0,
+                showinfo:0,
+                rel:0,
+                autoplay:1,
+                loop:1,
+                mute:1,
+                allowfullscreen:1
+              }"
+            />
 
-        
-      </div>
-      </swiper-slide>
-    </swiper>
+          
+        </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+
 </template>
 
 <style lang="scss">
+.home-page{
+  position: relative;
+  width:100%;
+  height:100%;
+}
 :root {
   --video-width: 100vw;
   --video-height: 100vh;
@@ -115,7 +126,12 @@
   }
 }
 .swiper{
-  height:100vh;
+  max-height:100vh;
+  min-height:100%;
+  .swiper-slide{
+    height:100vh;
+    min-height:500px;
+  }
 }
 .dialog-video{
   width: fit-content;
