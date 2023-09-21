@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import About from './pages/About.vue'
 import NotFoundComponent from './pages/404.vue'
+import Beauty from './pages/Beauty.vue'
 export default createRouter({
   history: createWebHistory(),
   routes: [
@@ -17,9 +18,14 @@ export default createRouter({
       name: 'About'
     },
     {
-        path: '/404',
-        name: 'PageNotExist',
-        component:NotFoundComponent,
+      path: '/beauty',
+      component:Beauty,
+      name: 'Dr.Beauty'
+    },    
+    {
+      path: '/404',
+      name: 'PageNotExist',
+      component:NotFoundComponent,
     },
     {
         path: "/:catchAll(.*)", // Unrecognized path automatically matches 404

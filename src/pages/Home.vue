@@ -89,7 +89,7 @@
               :videoUrl="list.url"
               height="100vh"
               :playerVars="{
-                controls:0,
+                controls:1,
                 showinfo:0,
                 rel:0,
                 autoplay:1,

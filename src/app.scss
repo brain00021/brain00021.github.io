@@ -21,3 +21,15 @@ main{
     height: 100vh;
     overflow: hidden;
 }
+.header-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .home-return{
+        width:30px;
+        height:auto;
+        img{
+            width:100%;
+        }
+    }
+}
