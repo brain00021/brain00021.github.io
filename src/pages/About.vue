@@ -78,8 +78,8 @@
     <div class="member-group" ref="second">
       <h3>Actually Humans</h3>
       <div class="member-innder-wrapper">
-        <div class="member" :style="{'background-image':`url(${member.member})`}"  v-for="(member,index) in memberList " :key="index">
-          <div class="member-cover" :style="{'background-image':`url(${member.member_hover})`}"></div>
+        <div class="member" :style="{'background-image':`${requre('../'+member.member+'')}`}"  v-for="(member,index) in memberList " :key="index">
+          <div class="member-cover" :style="{'background-image':`${requre('../'+member.member_hover+'')}`}"></div>
         </div>
       </div>
 
