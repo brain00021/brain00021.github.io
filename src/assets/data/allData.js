@@ -19,28 +19,28 @@ let data = {
     memberData:[
       {
         id:'member1',
-        member: `assets/role.jpg`,
-        member_hover:`assets/role_cover.jpg`
+        member: `../assets/role.jpg`,
+        member_hover:`../assets/role_cover.jpg`
       },
       {
         id:'member2',
-        member: `assets/role.jpg`,
-        member_hover:`assets/role_cover.jpg`
+        member: `../assets/role.jpg`,
+        member_hover:`../assets/role_cover.jpg`
       },
       {
         id:'member3',
-        member: `assets/role.jpg`,
-        member_hover:`assets/role_cover.jpg`
+        member: `../assets/role.jpg`,
+        member_hover:`../assets/role_cover.jpg`
       },
       {
         id:'member4',
-        member: `assets/role.jpg`,
-        member_hover:`assets/role_cover.jpg`
+        member: `../assets/role.jpg`,
+        member_hover:`../assets/role_cover.jpg`
       },
       {
         id:'member5',
-        member: `assets/role.jpg`,
-        member_hover:`assets/role_cover.jpg`
+        member: `../assets/role.jpg`,
+        member_hover:`../assets/role_cover.jpg`
       }
     ]
 }
