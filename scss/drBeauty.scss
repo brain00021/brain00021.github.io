@@ -53,11 +53,26 @@
         z-index: 10;
         padding: 30px;
         background-color: #000;
-        max-height: 500px;
+        max-height: 100vh;
         margin: auto;
         .content{
             display: flex;
             flex-direction: column;
+            overflow: auto;
+            max-height: 50vh;
+            padding:15px;
+            &::-webkit-scrollbar{
+                background-color: #fff;
+                width:2px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #888; 
+                width:2px;
+                border-radius: 25px;
+              }
+              &::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+              }
             h1{
                 display: flex;
                 align-items: flex-end;
@@ -71,6 +86,7 @@
         position: absolute;
         right:10px;
         top:-50px;
+        cursor: pointer;
         .bi{
             position: relative;
             transform: rotate(45deg);
