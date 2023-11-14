@@ -1,0 +1,31 @@
+extends _layout.pug
+block style
+     link( rel="stylesheet" href="../css/about.css")
+block container
+    .member
+        .videos-wrapper.aboutVideos1
+            .blackScreen
+                .button(data-set="0")
+                    img(src="../assets/logo.png")
+        .aboutMember
+            h2 我的檔期員工
+            .container.member-container
+        .videos-wrapper.aboutVideos2
+            h2 辦公室瀏覽
+            .blackScreen
+                .button(data-set="1")
+                    img(src="../assets/logo.png")
+        .contact-us
+            .container
+                p.title STAY IN THE LOOP
+                .share
+                    a.icon
+                        i.bi.bi-facebook
+                    a.icon
+                        i.bi.bi-instagram
+                    a.icon
+                        i.bi.bi-youtube
+block footer
+    include _footer.pug
+block scripts
+    script(src="../js/about.js" type="module")

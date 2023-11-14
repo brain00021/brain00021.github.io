@@ -1,0 +1,200 @@
+@import "./dialog.scss";
+:root {
+    --video-width: 100vw;
+    --video-height: 100vh;
+
+    @media (min-aspect-ratio: 16/9) {
+        --video-height: 56.25vw;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        --video-width: 177.78vh;
+    }
+}
+body{
+    background-color: var(--bs-black);
+    color:var(--bs-white)
+}
+.footer{
+    width:100%;
+    display: flex;
+    border-top:1px solid #fff;
+    .footer-inner-wrapper{
+        display: flex;
+        padding: 15px 30px;
+        justify-content: space-between;
+        flex:1;
+        .logo{
+            width:80px;
+            height:80px;
+        }
+        .contact{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            flex:1;
+            position: absolute;
+            margin:auto;
+            right:0;
+            left:0;
+        }
+
+    }
+    img{width:100%;}
+
+}
+
+// 漢堡選單
+#toggle {
+    width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    span {
+      width: 100%;
+      height: 5px;
+      display: block;
+      background: #fff ;
+      margin: 4px auto;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+    }
+    &.on span{
+        background: #1f1f1f;
+    }
+    &.on span:first-child {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &.on span:nth-child(2) {
+      opacity: 0;
+    }
+    &.on span:last-child {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+  }
+
+//header
+.header{
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.share-link-title{
+    font-size:20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.share-link{
+    .icon{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+// header
+.menu-btn{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size:30px;
+    font-weight: bold;
+    margin:15px 30px;
+    color:#fff;
+    p{
+        margin-bottom:0;
+    }
+}
+.header-title{
+    .close{
+        margin-right:20px;
+    }
+}
+.close{
+    display:flex;
+    margin-top:10px;
+    font-size:20px;
+    p{
+        margin-bottom: 0;
+    }
+}
+.menu{
+    width:0;
+    transform: all 0.5s ease;
+    justify-content: space-between;
+    flex-direction: column;
+    height:100%;
+    display: none;
+    font-size:30px;
+    a{
+        text-decoration: none;
+        color:#000;
+        font-weight: bold;
+        &:after{
+            display: block;
+            content:'';
+            width:0%;
+            border-bottom:1px solid #000;
+            transition:all 0.5s ease;
+
+        }
+        &:hover{
+            &:after{
+                width:100%;
+            }
+        }
+    }
+}
+.header{
+    position: fixed;
+    left:0;
+    top:0;
+    display: flex;
+    z-index: 999;
+    a{
+        display: block;
+        width:100%;
+    }
+    .share-wrapper{
+        display: none;
+    }
+    &.openMenu{
+        height:100%;
+        background-color: #fff;
+        #toggle-link{
+            span{
+                color:#000;
+            }
+        }
+        .menu-btn{
+            display: flex;
+            // margin: 15px 0;
+        }
+        .menu{
+            width:auto;
+            padding:15px;
+            display: flex;
+        }
+        .share-link-title{
+            color:#000;
+        }
+        .share-wrapper{
+            display: flex;
+            flex-direction: column;
+        }
+        .share-link{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            
+            .icon{
+                i{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+}
+
+
+// footer

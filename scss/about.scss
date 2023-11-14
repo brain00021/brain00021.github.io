@@ -1,0 +1,105 @@
+.button{
+
+    img{
+        width:50px;
+        height:50px;
+    }
+}
+
+.videos-wrapper{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .button{
+        position: absolute;
+
+    }
+    iframe{
+      width: var(--video-width);
+      height: var(--video-height);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+}
+.blackScreen{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(#000,.5);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    color:#fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    // top:-150px;
+    z-index:50;
+}
+.aboutMember{
+    padding:100px 0;
+    position: relative;
+
+}
+.aboutVideos2{
+    h2{
+        z-index: 100;
+        top:0;
+    }
+}
+.member-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .member{
+        max-width: 20%;
+        margin:0.5%;
+        flex-wrap: wrap;
+        img{width:100%}
+    }
+}
+.contact-us{
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title{
+        text-align: center;
+        font-size: 3.5em;
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+    }
+    .share{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .icon{
+            position: relative;
+            display: block;
+            margin:1em;
+            transition: all 0.5s ease-in-out;
+            top:0;
+            cursor: pointer;
+            &:hover{
+                position: relative;
+                top:-10px;
+            }
+
+        }
+        i{
+            color:#fff;
+            font-size:2em;
+        }
+    }
+}
