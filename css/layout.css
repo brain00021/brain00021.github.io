@@ -38,11 +38,11 @@
 .dialog .dialogFrame .close {
   position: absolute;
   right: -50px;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   top: -50px;
-  background-color: #fff;
-  border-radius: 50%;
+  font-size: 40px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,12 +50,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #000;
+  color: #fff;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 :root {
@@ -154,7 +156,7 @@ body {
 }
 
 .header {
-  height: 100%;
+  height: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

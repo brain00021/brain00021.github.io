@@ -1,3 +1,11 @@
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  -webkit-filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+          filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+}
+
 .button img {
   width: 50px;
   height: 50px;
@@ -14,6 +22,14 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media all and (max-width: 920px) {
+  .drBeautyInnerContext {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .drBeautyInnerContext .content-right {
   min-width: 300px;
   display: -webkit-box;
@@ -25,16 +41,26 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 15px;
+  position: relative;
 }
 .drBeautyInnerContext .content-right img {
   width: 100%;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
 }
 
 .drBeautyContent .aboutDrBeauty1 {
   width: 100%;
   height: 100vh;
-  background: url(../assets/mrBeauty1.jpg);
+  background: url(../assets/KVN_1104-86.jpg);
   background-size: cover;
+  position: sticky;
+  top: 0;
+}
+@media all and (min-width: 1280px) {
+  .drBeautyContent .aboutDrBeauty1 {
+    background-position: 0 -300px;
+  }
 }
 
 .drBeautyDialog {
@@ -172,7 +198,7 @@ h2 {
 
 .contact-us {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,6 +208,38 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url(../assets/KVN_1104-86.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+}
+.contact-us .container {
+  position: relative;
+  z-index: 100;
+}
+.contact-us .text {
+  margin-top: 15px;
+}
+.contact-us h5 {
+  font-size: 20pt;
+  font-weight: bold;
+}
+.contact-us p {
+  font-size: 15pt;
+  color: #fff;
+}
+.contact-us .submit {
+  width: 100%;
+  height: 30px;
+}
+.contact-us input {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+}
+.contact-us input#subject {
+  width: 100%;
+  padding: 15px;
 }
 .contact-us .title {
   text-align: center;
@@ -215,4 +273,89 @@ h2 {
 .contact-us .share i {
   color: #fff;
   font-size: 2em;
+}
+
+#submit {
+  width: 150px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+}
+#submit:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.profilo {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.profilo #swiper-pagination {
+  position: absolute;
+  left: 0%;
+  color: #fff;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 350px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.profilo #swiper-pagination .pagination-subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.profilo #swiper-pagination .swiper-pagination-bullet-active {
+  background-color: transparent;
+}
+.profilo #swiper-pagination .swiper-pagination-bullet {
+  margin: 20px;
+  background-color: transparent;
+}
+.profilo #swiper-pagination span {
+  font-size: 15pt;
+  color: #fff;
+}
+
+.profilo-swiper iframe {
+  width: var(--video-width);
+  height: var(--video-height);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.profilo-swiper {
+  height: 100vh;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }

@@ -8,7 +8,7 @@ block header
                 .bi.bi-plus-circle
             .drBeautyInnerContext
                 .content-right
-                    img(src="../assets/mrBeauty1.jpg")
+                    img(src="../assets/KVN_1104-86.jpg")
                 .content
                     h1 
                         p 美麗本人
@@ -18,34 +18,41 @@ block header
                         ul
                             h6 經歷
                             li 
-                                p 2019年開始以藝名『美麗本人』成立YouTube頻道，以浮誇且具有幽默感的表演方式對華語歌曲MV 做Reaction 影片，影片製作加入動畫及特效，高品質影像呈現方式聞名[2][3]，更以一句「R爆」跟經典手勢「醬擠」在年輕族群口中瘋傳成為了時下年輕人的流行用語及手勢。不到一年YouTube超過8萬粉絲訂閱，截至2020年11月頻道觀看數超過500萬。同年，也受黃鴻升邀約，拍攝TISSOT天梭手錶微電影廣告，開啟演員之路。
+                                p 2016年與丁大隻以及ED Wang組成“不正經小隊”，並發行《久等了》單曲[1]
                             li 
-                                p 
+                                p 2019年開始以藝名『美麗本人』成立YouTube頻道，以浮誇且具有幽默感的表演方式對華語歌曲MV 做Reaction 影片，影片製作加入動畫及特效，高品質影像呈現方式聞名[2][3]，更以一句“R爆”跟經典手勢“醬擠”在年輕族群口中瘋傳成為了時下年輕人的流行用語及手勢。不到一年YouTube超過8萬粉絲訂閱，截至2020年11月頻道觀看數超過500萬。同年，也受黃鴻升邀約，拍攝TISSOT天梭手錶微電影廣告，開啟演員之路。
+                            li
+                                p 2020年初受GQ台灣邀請拍攝網路專題，也是第一位被GQ台灣邀請拍攝專題的網路藝人[4]。同年5月以演員身份擔任藝人瘦子，鬼鬼吳映潔，李浩瑋及團體沒有才能[5]MV男主角。同年10月受台灣Red Bull邀請，參與Swift16企劃創作歌曲『喵』[6]。同月16日受邀至台中知名夜店18TC，參與Red Bull『TURN IT UP』活動。
+                            li
+                                p 2021年參加台灣第一屆嘻哈選秀節目『大嘻哈時代』海選，演唱拿手歌曲『喵』，並在表演過程中，以『筋膜槍』的振動模式按壓喉嚨，改變聲音呈現效果，其特殊表演方式讓評審立即舉牌，成為該場次首位過關選手
+                            li
+                                p 2022年受邀參加台灣嘻哈選秀節目『大嘻哈時代2』與阿達、嗩吶、賀瓏共同擔任該節目之主持，更與阿達擔任現場賽評一職。
 block container
     .drBeautyContent
         .aboutDrBeauty1
             .blackScreen
                 .button.button-resume
                     img(src="../assets/logo.png")
-        .aboutMember
-            h2 我的檔期員工
-            .container.member-container
-        //- .videos-wrapper.aboutVideos2
-            //- h2 辦公室瀏覽
-            //- .blackScreen
-            //-     .button(data-set="1")
-            //-         img(src="../assets/logo.png")
+        .profilo
+            .profilo-swiper
+                .swiper-wrapper
+                .swiper-pagination#swiper-pagination
+
         .contact-us
+            .blackScreen
             .container
-                p.title STAY IN THE LOOP
-                .share
-                    a.icon
-                        i.bi.bi-facebook
-                    a.icon
-                        i.bi.bi-instagram
-                    a.icon
-                        i.bi.bi-youtube
-//- block footer
-//-     include _footer.pug
+                h5 BUSINESS INQUIRIES?
+                p Please email to mssdrbeauty@gmail.com
+                form
+                    .text
+                        p Subject:
+                        input#subject(type='text', name='subject')
+                    .text
+                        p Message:
+                        textarea#message(type='text', name='body')
+                    input#submit(type='submit', name='submit', value='Submit')
+block footer
+    include _footer.pug
+
 block scripts
     script(src="../js/drBeauty.js" type="module")

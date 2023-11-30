@@ -1,5 +1,5 @@
+@import 'mixin';
 .button{
-
     img{
         width:50px;
         height:50px;
@@ -11,7 +11,9 @@
 .drBeautyInnerContext{
     display: flex;
     align-items: center;
-    
+    @include rwd($md){
+        flex-direction: column;
+    }
     .content-right{
         min-width:300px;
         display: flex;
@@ -20,7 +22,12 @@
         // border-radius: 50%;
         align-items: center;
         margin: 15px;
-        img{width: 100%;}
+        position: relative;
+        
+        img{
+            width: 100%;
+            transform: translate(0,20%);
+        }
     }
 }
 .drBeautyContent{
@@ -28,8 +35,14 @@
     .aboutDrBeauty1{
         width:100%;
         height:100vh;
-        background:url(../assets/mrBeauty1.jpg);
+        background:url(../assets/KVN_1104-86.jpg);
         background-size: cover;
+        position: sticky;
+        top:0;
+        // background-position: -300px;
+        @include rwd($lg,min-width){
+            background-position: 0 -300px ;
+        }
     }
 }
 .drBeautyDialog{
@@ -141,10 +154,45 @@ h2{
 }
 .contact-us{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background:url(../assets/KVN_1104-86.jpg) no-repeat center center;
+    // background-position: 0px -200px;
+    background-size: cover;
+    position: relative;
+    z-index: 100;
+    .container{
+        position: relative;
+        z-index: 100;
+    }
+    .text{
+        margin-top:15px;
+    }
+    h5{
+        font-size:20pt;
+        font-weight: bold;
+    }
+    p{
+        font-size:15pt;
+        color:#fff;
+        
+    }
+    .submit{
+        width:100%;
+        height:30px;
+    }
+    input{
+        // border:1px solid rgba(#000,.0);
+        border-radius: 5px;
+        background-color: rgba(#fff,.5);
+        border: 1px solid #fff;
+        &#subject{
+            width:100%;
+            padding: 15px;
+        }
+    }
     .title{
         text-align: center;
         font-size: 3.5em;
@@ -174,4 +222,78 @@ h2{
             font-size:2em;
         }
     }
+}
+#submit{
+    width:150px;
+    height:50px;
+    background-color: transparent;
+    border:1px solid #fff;
+    border-radius: 15px;
+    padding:15px;
+    margin:15px 0;
+    color:#fff;
+    &:hover{
+        background-color: #fff;
+        color:#000
+    }
+}
+.profilo{
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    #swiper-pagination{
+        position: absolute;
+        left: 0%;
+        color:#fff;
+        
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        width:fit-content;
+        max-width: 350px;
+        height:fit-content;
+        cursor: pointer;
+        .pagination-subtitle{
+            display: flex;
+            width:fit-content;
+           
+        }
+        .swiper-pagination-bullet-active{
+           
+            background-color: transparent;
+        }
+        .swiper-pagination-bullet{
+            margin:20px;
+            background-color: transparent;
+        }
+        span{
+            font-size:15pt;
+            color:#fff;
+        }
+    }
+}
+.profilo-swiper iframe {
+    width: var(--video-width);
+    height: var(--video-height);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  .profilo-swiper{
+    height:100vh;
+  }
+
+textarea{
+    width:100%;
+    height:300px;
+   background-color: rgba(#fff,.5);
+   border-radius: 5px;
+   padding:10px;
+   border:1px solid rgba(#fff,.5)
+
 }
