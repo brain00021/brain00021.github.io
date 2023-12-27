@@ -73,8 +73,7 @@ $(function async(){
         await initSwiper();
     }
 
-    $('#submit').on('click', function(){
-        debugger;
+    $('#submit').on('click', function(event){
         event.preventDefault();
         let email = 'mssdrbeauty@gmail.com';
         let subject = $('#subject')[0].value || '';

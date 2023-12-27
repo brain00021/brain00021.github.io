@@ -1,0 +1,32 @@
+extends _layout.pug
+block style
+     link( rel="stylesheet" href="/css/contact.css")
+block container
+    .contact
+        .contact-us
+            .contact-form
+                form
+                    .text
+                        p Subject:
+                        input#subject(type='text', name='subject')
+                    .text
+                        p Message:
+                        textarea#message(type='text', name='body')
+                    input#submit(type='submit', name='submit', value='Submit')
+            .container
+                .icon
+                    img(src="/assets/logo.png")
+                p.title STAY IN THE LOOP
+                .share
+                    a.icon(href="https://www.youtube.com/channel/UCHsA8rgzjoV7DXtRX8V9Qag" target="_blank")
+                        i.bi.bi-facebook
+                    a.icon(href="https://www.instagram.com/myschedule_ltd/" target="_blank")
+                        i.bi.bi-instagram
+                    a.icon(href="https://www.facebook.com/myschedule/?locale=zh_TW" target="_blank")
+                        i.bi.bi-youtube
+        .videos-wrapper
+            .blackScreen
+block footer
+    include _footer.pug
+block scripts
+    script(src="../js/contact.js" type="module")

@@ -94,31 +94,39 @@ let data = {
     ],
     // Dr.Beauty Page
     drBeautyVideos:[
-    {
+      {
+        id: 'about-videos1',
+        title: '【壞爸爸 Bad Daddy】',
+        url:'https://www.youtube.com/embed/KH4HNQBlP7U?si=Z0u3VcozzcY2vQfi'
+      },{
+        id: 'about-videos2',
+        title: '【李包比自傳feat. 簡道生】',
+        url:'https://www.youtube.com/embed/lhAvlkYlFc4?si=Cyhpl9w_LkARqhxp'
+      },
+      {
+        id: 'about-videos3',
+        title: '【喵 Meou】',
+        url:'https://www.youtube.com/embed/cO8-gJBgm1A?si=vpzR0CtgwEjD8HYP'
+      },
+      {
+        id: 'about-videos5',
+        title: '【禿頭爸爸 Bald Head Daddy】',
+        url:'https://www.youtube.com/embed/xZEdoCuxuA0?si=sr0f2fOFNgaTe3W7'
+      },
+      {
+        id: 'about-videos6',
+        title: '【美麗本人 ft. 謝乾】',
+        url:'https://www.youtube.com/embed/TH4iVLVqXAc?si=ayK-S5fg7CVtmEvI'
+      },
+    ],
+    // Contact Page
+    contactVideos:[{
       id: 'about-videos1',
-      title: '【壞爸爸 Bad Daddy】',
-      url:'https://www.youtube.com/embed/KH4HNQBlP7U?si=Z0u3VcozzcY2vQfi'
+      url:'https://www.youtube.com/embed/Ffli-o0ocT0?si=zeLjtzglBG7qmga1'
     },{
       id: 'about-videos2',
-      title: '【李包比自傳feat. 簡道生】',
-      url:'https://www.youtube.com/embed/lhAvlkYlFc4?si=Cyhpl9w_LkARqhxp'
-    },
-    {
-      id: 'about-videos3',
-      title: '【喵 Meou】',
-      url:'https://www.youtube.com/embed/cO8-gJBgm1A?si=vpzR0CtgwEjD8HYP'
-    },
-    {
-      id: 'about-videos5',
-      title: '【禿頭爸爸 Bald Head Daddy】',
-      url:'https://www.youtube.com/embed/xZEdoCuxuA0?si=sr0f2fOFNgaTe3W7'
-    },
-    {
-      id: 'about-videos6',
-      title: '【美麗本人 ft. 謝乾】',
-      url:'https://www.youtube.com/embed/TH4iVLVqXAc?si=ayK-S5fg7CVtmEvI'
-    },
-  ]
+      url:'https://www.youtube.com/embed/d5PVbDDREW8?si=GIAf9AGI345WvGX5'
+    }],
 
 }
 

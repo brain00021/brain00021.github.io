@@ -1,0 +1,102 @@
+@import 'mixin';
+.contact{
+    display: flex;
+    .contact-us{
+        position: absolute;
+        top:0;
+    }
+    .contact-us{
+        position: relative;
+        z-index: 30;
+        display: flex;
+        max-width: 80%;
+        padding: 0 1em;
+        height:100vh;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        @include rwd($lg,min-width){
+            max-width:50%;
+        }
+        .container{
+            max-width: 500px;
+        }
+        .text {
+            min-width: 300px;
+            input{
+                background:transparent;
+                color:#fff;
+                padding:10px;
+            }
+            textarea{
+                background:transparent;
+                border:1px solid #fff;
+                min-height: 200px;
+                width:100%;
+                padding:10px;
+                color:#fff;
+            }
+        }
+        input{
+            width:100%;
+            height:50px;
+            border:1px solid #fff;
+           
+            max-width: 500px;
+        }
+        @include rwd($md){
+            max-width:100%;
+        }
+        #submit{
+            border-radius: 5px;
+            margin-top:15px;
+            margin-bottom: 15px;
+            &:hover{
+                background-color: #b2b2b2;
+            }
+        }
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex:1;
+
+        .title{
+            text-align: center;
+        }
+        .share{
+            display: flex;
+            justify-content: center;
+            .icon{
+                margin:0 5%;
+                color:#fff;
+            }
+        }
+        img{
+            width:100%;
+        }
+    }
+    .videos-wrapper{
+        background-color: #000;
+        width:100%;
+        height:100vh;
+        position: absolute;
+        .blackScreen{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(#000,.7);
+            z-index: 10;
+        }
+        iframe{
+            position: absolute;
+            width: 100%;
+            height:100%;
+        }
+    }
+
+
+}

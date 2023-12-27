@@ -1,0 +1,130 @@
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  -webkit-filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+          filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact .contact-us {
+  position: absolute;
+  top: 0;
+}
+.contact .contact-us {
+  position: relative;
+  z-index: 30;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 80%;
+  padding: 0 1em;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+@media all and (min-width: 1280px) {
+  .contact .contact-us {
+    max-width: 50%;
+  }
+}
+.contact .contact-us .container {
+  max-width: 500px;
+}
+.contact .contact-us .text {
+  min-width: 300px;
+}
+.contact .contact-us .text input {
+  background: transparent;
+  color: #fff;
+  padding: 10px;
+}
+.contact .contact-us .text textarea {
+  background: transparent;
+  border: 1px solid #fff;
+  min-height: 200px;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+}
+.contact .contact-us input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #fff;
+  max-width: 500px;
+}
+@media all and (max-width: 920px) {
+  .contact .contact-us {
+    max-width: 100%;
+  }
+}
+.contact .contact-us #submit {
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.contact .contact-us #submit:hover {
+  background-color: #b2b2b2;
+}
+.contact .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.contact .container .title {
+  text-align: center;
+}
+.contact .container .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.contact .container .share .icon {
+  margin: 0 5%;
+  color: #fff;
+}
+.contact .container img {
+  width: 100%;
+}
+.contact .videos-wrapper {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.contact .videos-wrapper .blackScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.contact .videos-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
