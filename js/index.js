@@ -13,12 +13,12 @@ $(function async(){
             autoHeight:true,
             mousewheel: true,
             observer: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true,
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: false,
+            //     dynamicBullets: false,
 
-            },
+            // },
         });
     }
     const init = ()=>{

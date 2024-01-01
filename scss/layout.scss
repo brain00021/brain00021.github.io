@@ -181,6 +181,8 @@ body{
         .share-wrapper{
             display: flex;
             flex-direction: column;
+            position: relative;
+            left:-10px;
         }
         .share-link{
             display: flex;
@@ -188,7 +190,7 @@ body{
             justify-content: space-around;
             flex-direction: row;
             align-items: center;
-            
+
             .icon{
                 i{
                     font-size:20px;

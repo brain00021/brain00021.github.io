@@ -297,6 +297,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  left: -10px;
 }
 .header.openMenu .share-link {
   display: -webkit-box;
