@@ -1,12 +1,23 @@
 $(()=>{
     // header
-    $('.menu a').on('click', function(){
-        const name = $(this).text();
-        sessionStorage.setItem("pageName", name);
-    })
-    const pageName = sessionStorage.getItem("pageName") || 'HOME';
+    // $('.menu a').on('click', function(){
+    //     const name = $(this).text();
+    //     sessionStorage.setItem("pageName", name);
+    // })
 
-    
+    const path = document.location.pathname;
+
+    const titleCheck = {
+        'portfolio': 'OUR WORK',
+        'contact':'CONTACT',
+        'drBeauty':'DR.BEAUTY',
+        'about': 'ABOUT',
+        'index': 'HOME'
+    }
+    var page = path.split("/").pop().replace('.html','');
+
+    const pageName = titleCheck[page] || 'HOME';
+
     $('#toggle-link').find('span').text(pageName)
 
     $('#toggle').on('click',function(){
@@ -36,3 +47,4 @@ function youtube_parser(url){
     var match = url.match(regExp);
     return (match&&match[7].length==11)? match[7] : false;
 }
+
