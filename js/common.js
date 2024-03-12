@@ -5,6 +5,8 @@ $(()=>{
         sessionStorage.setItem("pageName", name);
     })
     const pageName = sessionStorage.getItem("pageName") || 'HOME';
+
+    
     $('#toggle-link').find('span').text(pageName)
 
     $('#toggle').on('click',function(){

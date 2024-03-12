@@ -1,0 +1,7 @@
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  -webkit-filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+          filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
+}

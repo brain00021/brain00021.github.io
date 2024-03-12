@@ -121,6 +121,64 @@ let data = {
       id: 'about-videos2',
       url:'https://www.youtube.com/embed/d5PVbDDREW8?si=GIAf9AGI345WvGX5'
     }],
+    // Contact Page
+    profilo:[{
+        name:'COMMERCIAL',
+        profilo:[
+          {
+            id: 'about-videos1',
+            title: '【壞爸爸 Bad Daddy】',
+            url:'https://www.youtube.com/embed/Ffli-o0ocT0?si=zeLjtzglBG7qmga1'
+          },{
+            id: 'about-videos2',
+            title: 'TEST2',
+            url:'https://www.youtube.com/embed/d5PVbDDREW8?si=GIAf9AGI345WvGX5'
+          }
+        ]
+      },{
+        name:'TELEVISION',
+        profilo:[
+          {
+            id: 'about-videos1',
+            title: '【壞爸爸222 Bad Daddy】',
+            url:'https://www.youtube.com/embed/Ffli-o0ocT0?si=zeLjtzglBG7qmga1'
+          },{
+            id: 'about-videos2',
+            title: 'TEST22222',
+            url:'https://www.youtube.com/embed/d5PVbDDREW8?si=GIAf9AGI345WvGX5'
+          }
+        ]
+      },
+      {
+        name:'MUSIC VIDOES',
+        profilo:[
+          {
+            id: 'about-videos1',
+            title: '【壞爸爸222 Bad Daddy】',
+            url:'https://www.youtube.com/embed/xZEdoCuxuA0?si=sr0f2fOFNgaTe3W7'
+          },{
+            id: 'about-videos2',
+            title: 'TEST22222ssss',
+            url:'https://www.youtube.com/embed/TH4iVLVqXAc?si=ayK-S5fg7CVtmEvI'
+          }
+        ]
+      },
+      {
+        name:'OTHER',
+        profilo:[
+          {
+            id: 'about-videos1',
+            title: '【【李包比自傳feat. 簡道生',
+            url:'https://www.youtube.com/embed/lhAvlkYlFc4?si=Cyhpl9w_LkARqhxp'
+          },{
+            id: 'about-videos2',
+            title: 'TEST22222李包比自傳feat. 簡道生】',
+            url:'https://www.youtube.com/embed/cO8-gJBgm1A?si=vpzR0CtgwEjD8HYP'
+          }
+        ]
+      }
+    ]
+
 
 }
 
