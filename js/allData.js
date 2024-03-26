@@ -156,13 +156,10 @@ let data = {
         name:'TELEVISION',
         profilo:[
           {
-            id: 'about-videos1',
-            title: '【壞爸爸222 Bad Daddy】',
-            url:'https://www.youtube.com/embed/Ffli-o0ocT0?si=zeLjtzglBG7qmga1'
-          },{
-            id: 'about-videos2',
-            title: 'TEST22222',
-            url:'https://www.youtube.com/embed/d5PVbDDREW8?si=GIAf9AGI345WvGX5'
+            id: 'tv1',
+            title: '大嘻哈時代2',
+            url:'https://youtu.be/PrE9j9r0Ewo?si=0xUo6Ol8yvwvrrcy',
+            author: '謝乾'
           }
         ]
       },
@@ -309,20 +306,88 @@ let data = {
             title: "草屯囝仔 Caotun Boyz - 救人喔 Help (Official Music Video)",
             url:'https://youtu.be/HqhQR3adbok?si=CH0pu9G5xhJw0-iR',
             author: 'ZC'
+          }, {
+            id: 'musicvideos28',
+            title: "瘦子E.SO【妹妹 Mei Mei】Official Music Video",
+            url:'https://youtu.be/Df9lbCJNhGU?si=96PI0Tv9fHYH_nEq',
+            author: 'ZC'
+          }, {
+            id: 'musicvideos29',
+            title: "J.Sheon - NO! 不良示範 (Official Music Video)",
+            url:'https://youtu.be/O2EZ6Tys0x8?si=8w3-iQqDIIdwXyfH',
+            author: 'ZC'
+          }, {
+            id: 'musicvideos30',
+            title: "婁峻碩SHOU,派偉俊Patrick Brasca - 一首歌 ONE SONG M/V",
+            url:'https://youtu.be/QvydPXEfk0M?si=NsdRQ_-qTdblw2iQ',
+            author: 'ZC'
+          }, {
+            id: 'musicvideos31',
+            title: "BSB - 麻克與林送夫 Remix (Official MV)",
+            url:'https://youtu.be/Et-TvF_4fa4?si=NeMWObX4kFhhMBzU',
+            author: 'ZC'
+          }, {
+            id: 'musicvideos32',
+            title: "CHRISFLOW唐仲彣 - 【KEEP IT ONE HUNNIT】 Official M/V",
+            url:'https://www.youtube.com/watch?v=MckFYCuEaCE',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos33',
+            title: "WaverLAB - 魯肉飯 (Official Video) ft. HighBoy, CuzyBoii, FatFlowBoy",
+            url:'https://www.youtube.com/watch?v=jJQdTp8xdEM',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos34',
+            title: "Chang Wu / 張伍 『 看他們過得很好 所以我去他媽的』THEY'RE LIVING A GOOD LIFE, SO I SAY FUCK EM | Official Music Video",
+            url:'https://www.youtube.com/watch?v=k-vPJZvm7IE',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos35',
+            title: "G.Wayen - I’m Your Fool ft. FiveWood & Pan Beatz(Official Music Video)",
+            url:'https://www.youtube.com/watch?v=1KIqZo1d5hA',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos36',
+            title: "LC - Stoner feat. JAYRoll [Official Video]",
+            url:'https://www.youtube.com/watch?v=0QzlgXD0F84',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos37',
+            title: "阿達A/DA 水樂男孩STRAIGHT UP BOYZ 【吉娃娃】Office Music Video",
+            url:'https://www.youtube.com/watch?v=bnOjr-SMTbc',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos38',
+            title: "異鄉人 Outlander & 大寶 DaBao - 不捨不得 Official Music Video",
+            url:'https://www.youtube.com/watch?v=F6XaLvhpGog',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos39',
+            title: "張棋惠 Windie { 忘記關火 } Official HD MV",
+            url:'https://www.youtube.com/watch?v=T1wgDk9MEOU',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos40',
+            title: "美麗本人 禿油肥 To Your Face feat. DJ GROUND Official Music Video",
+            url:'https://www.youtube.com/watch?v=U2-OzFANCiA',
+            author: '莎賓涂Sebine. Tu'
+          }, {
+            id: 'musicvideos41',
+            title: "阿部瑪利亞 Maria Abe '11th hour' MV",
+            url:'https://www.youtube.com/watch?v=xndA9Geu4eg',
+            author: '莎賓涂Sebine. Tu'
           }
+
         ]
       },
       {
         name:'OTHER',
         profilo:[
           {
-            id: 'about-videos1',
-            title: '【【李包比自傳feat. 簡道生',
-            url:'https://www.youtube.com/embed/lhAvlkYlFc4?si=Cyhpl9w_LkARqhxp'
-          },{
-            id: 'about-videos2',
-            title: 'TEST22222李包比自傳feat. 簡道生】',
-            url:'https://www.youtube.com/embed/cO8-gJBgm1A?si=vpzR0CtgwEjD8HYP'
+            id: 'other1',
+            title: '我的檔期showreel 2018',
+            url:'https://www.youtube.com/watch?v=Ffli-o0ocT0',
+            author: '謝乾'
           }
         ]
       }

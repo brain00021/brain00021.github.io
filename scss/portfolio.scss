@@ -4,14 +4,21 @@
     overflow: hidden;
     text-align: center;
 }
+
+
 #portfolio-header{
-    padding-left:350px;
+    // padding-left:350px;
     z-index: 998;
-    top:0;
+    top: 0;
     width: 100%;
-    margin: 15px;
-    border-bottom: 1px solid rgba(#fff,.5);
+    padding: 15px;
+    padding-left: 350px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     position: fixed;
+    background-image: linear-gradient(180deg, rgba(black,.9) 60%, transparent 100%);
+    .swiper-wrapper{
+        max-width: 150px;
+    }
     button{
         border:0;
         background-color: transparent;
@@ -57,7 +64,8 @@
         display: flex;
         flex-direction: column;
         width:fit-content;
-        max-width: 350px;
+        // max-width: 350px;
+        max-width: 40vw;
         height:fit-content;
         cursor: pointer;
         .pagination-subtitle{

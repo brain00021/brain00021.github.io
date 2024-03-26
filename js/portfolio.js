@@ -18,8 +18,16 @@ $(function async(){
         }
     }
     let storeIndex = []
+    let currentSwiper = {}
     const initVideos = (i)=>{
-        if(storeIndex.indexOf(i) !== -1) return ;
+        
+        
+        if(storeIndex.indexOf(i) !== -1) {
+            stopAllYouTubeVideos();
+            let iframe = document.getElementById(`youtube${profilo[i].name}${currentSwiper[profilo[i].name] + 1 || 0}`);
+            iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+            return ;
+        }
         storeIndex.push(i)
         videosElement.append(`<div class="videos" data-set="${profilo[i].name}"><div class="swiper-wrapper"></div><div class="swiper-pagination"></div></div>`)
         profilo[i].profilo.forEach((current,index)=>{
@@ -60,26 +68,37 @@ $(function async(){
                 }
             },
         });
+        currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
+
+
         let storeForIframe = [];
         if(storeForIframe.length < 1){
             updateIframe()
         }
-
         function updateIframe() {
             let currentIndex = swiper.activeIndex;
-            if(storeForIframe.indexOf(currentIndex) !== -1) return;
+            if(storeForIframe.indexOf(currentIndex) !== -1) {
+
+                return;
+            };
             storeForIframe.push(currentIndex);
             let currentUrl = profilo[i].profilo[currentIndex].url;
             console.log(swiper.activeIndex,profilo[i],'testInit')
             videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
-                <iframe id="youtube${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
+                <iframe id="youtube${profilo[i].name}${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
             `)
+
 
         }
        
         swiper.on('slideChange', function () {
             // console.log(swiper.activeIndex,profilo[i],'test')
             updateIframe();
+            stopAllYouTubeVideos();
+            let currentIndex = swiper.activeIndex;
+            let iframe = document.getElementById(`youtube${profilo[i].name}${currentIndex+1}`);
+            currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
+            iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
             // let currentIndex = swiper.activeIndex;
             // let currentUrl = profilo[i].profilo[currentIndex].url;
             // videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
@@ -123,7 +142,7 @@ var stopAllYouTubeVideos = () => {
     const initSwiper = () => {
         let swiper = new Swiper('.profilo-swiper', {
             spaceBetween: 0,
-            slidesPerView: 4,
+            slidesPerView: 'auto',
             slideToClickedSlide: true,
             // loop: true,
             // mousewheel: true,
