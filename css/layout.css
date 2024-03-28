@@ -168,8 +168,10 @@ body {
 
 .share-link-title {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 0;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .share-link .icon {
@@ -233,11 +235,15 @@ body {
   height: 100%;
   display: none;
   font-size: 30px;
+  padding-left: 40px;
 }
 .menu a {
   text-decoration: none;
   color: #000;
   font-weight: bold;
+  margin-top: 20px;
+  white-space: normal;
+  letter-spacing: 2px;
 }
 .menu a:after {
   display: block;
@@ -298,7 +304,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  left: -10px;
 }
 .header.openMenu .share-link {
   display: -webkit-box;

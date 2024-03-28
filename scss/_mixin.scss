@@ -4,11 +4,16 @@ $md: 920px;
 $sm: 720px;
 $xs: 550px;
 $xxs: 380px;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&display=swap');
 
 @mixin rwd($vw: $md, $limit: max-width) {
 	@media all and (#{$limit}: $vw) {
 	  @content;
 	}
+}
+*{
+  font-family: "Bebas Neue", "Noto Sans TC",sans-serif;
 }
 
 .button{

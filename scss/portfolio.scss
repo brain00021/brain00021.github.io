@@ -54,6 +54,18 @@
         }
     }
 }
+.profilo-text{
+    position: absolute;
+    margin: auto;
+    top: 10%;
+    /* bottom: 0; */
+    z-index: 99;
+    left: 5%;
+    height: fit-content;
+    font-size: 9vw;
+    max-width: 300px;
+    font-family: "Bebas Neue", sans-serif;
+}
 .profilo{
     position: relative;
     width:100%;
@@ -62,6 +74,12 @@
     overflow: hidden;
     z-index: 99;
     background-color: #000;
+    .swiper-pagination-bullet:only-child{
+        display: flex !important;
+        width: fit-content;
+        height: fit-content !important;
+        margin: auto 50px !important;
+    }
     .videos{
         height:100%;
     }

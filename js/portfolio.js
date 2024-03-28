@@ -77,13 +77,22 @@ $(function async(){
         }
         function updateIframe() {
             let currentIndex = swiper.activeIndex;
+            let currentDate = profilo[i].profilo[currentIndex].date;
+            if(currentDate){
+                $('.profilo-text').text(currentDate)
+            }else{
+                $('.profilo-text').text('')
+            }
+
             if(storeForIframe.indexOf(currentIndex) !== -1) {
 
                 return;
             };
             storeForIframe.push(currentIndex);
             let currentUrl = profilo[i].profilo[currentIndex].url;
+            
             console.log(swiper.activeIndex,profilo[i],'testInit')
+     
             videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
                 <iframe id="youtube${profilo[i].name}${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
             `)
@@ -96,6 +105,7 @@ $(function async(){
             updateIframe();
             stopAllYouTubeVideos();
             let currentIndex = swiper.activeIndex;
+
             let iframe = document.getElementById(`youtube${profilo[i].name}${currentIndex+1}`);
             currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
             iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
@@ -142,7 +152,7 @@ var stopAllYouTubeVideos = () => {
     const initSwiper = () => {
         let swiper = new Swiper('.profilo-swiper', {
             spaceBetween: 0,
-            slidesPerView: 'auto',
+            slidesPerView: 4,
             slideToClickedSlide: true,
             // loop: true,
             // mousewheel: true,
