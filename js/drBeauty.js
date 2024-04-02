@@ -4,10 +4,17 @@ $(function async(){
     const { drBeautyVideos } = data;
     $('.button-resume').on('click',function(){
         $('.drBeautyDialog').addClass('on')
+        $('body').addClass('overflow')
     })
 
     $('.drBeautyContext .icon').on('click',function(){
         $('.drBeautyDialog').removeClass('on')
+        $('body').removeClass('overflow')
+    })
+
+    $('.drBeautyDialog').on('click',function(){
+        $('.drBeautyDialog').removeClass('on')
+        $('body').removeClass('overflow')
     })
 
 
@@ -32,7 +39,24 @@ $(function async(){
                 }
             },
         });
+        swiper.on('slideChange', function () {
+            // console.log(swiper.activeIndex,profilo[i],'test')
+            // updateIframe();
+            stopAllYouTubeVideos();
+            let currentIndex = swiper.activeIndex;
+    
+            let iframe = document.getElementById(`youtube${currentIndex+1}`);
+            // currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
+            iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+            // let currentIndex = swiper.activeIndex;
+            // let currentUrl = profilo[i].profilo[currentIndex].url;
+            // videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
+            //     <iframe id="youtube${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
+            // `)
+        });
     }
+
+
     let i =0;
     const init = ()=>{
         let element =$('.profilo-swiper').find('.swiper-wrapper')
@@ -68,6 +92,8 @@ $(function async(){
         `)
         // do something here
     });
+
+
     const gogo = async() =>{
         await init();
         await initSwiper();
