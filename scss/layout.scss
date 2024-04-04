@@ -22,6 +22,8 @@ body{
     width:100%;
     display: flex;
     border-top:1px solid $white;
+    position: relative;
+    z-index: 100;
     .footer-inner-wrapper{
         display: flex;
         padding: 15px 30px;
@@ -189,6 +191,7 @@ body{
             width:auto;
             padding:15px;
             display: flex;
+            padding-left:70px;
         }
         .share-link-title{
             color:#000;

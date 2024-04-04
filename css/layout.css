@@ -100,6 +100,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   border-top: 1px solid #FFF5EE;
+  position: relative;
+  z-index: 100;
 }
 .footer .footer-inner-wrapper {
   display: -webkit-box;
@@ -312,6 +314,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 70px;
 }
 .header.openMenu .share-link-title {
   color: #000;

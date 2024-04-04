@@ -18,4 +18,6 @@ $(function async(){
         window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
     })
     
+    const footer =  $('.footer').innerHeight();
+    $('.contact-us').css('height',`calc(100vh - ${footer+1}px)`)
 })
