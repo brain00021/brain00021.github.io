@@ -38,7 +38,7 @@ $(function async(){
                 <div class="wrapper wrapper${index}">
                     <div class="blackScreen">
                         <div class="button" data-profilotext="${index}" data-profilo="${i}">
-                            <img src="../assets/logo.png"/>
+                            <img src="./assets/logo.png"/>
                         </div>
                     </div>
                     

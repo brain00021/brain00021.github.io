@@ -67,7 +67,7 @@ $(function async(){
                 <div class="wrapper">
                     <div class="blackScreen">
                         <div class="button" data-set="${i}" >
-                            <img src="../assets/logo.png"/>
+                            <img src="./assets/logo.png"/>
                         </div>
                     </div>
                     <iframe id="youtube${i+1}" class="video" src="${drBeautyVideos[i].url}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(drBeautyVideos[i].url)}"  frameborder="0" allowfullscreen></iframe>

@@ -1,12 +1,12 @@
 extends _layout.pug
 block style
-     link( rel="stylesheet" href="/css/about.css")
+     link( rel="stylesheet" href="./css/about.css")
 block container
     .member
         .videos-wrapper.aboutVideos1
             .blackScreen
                 .button(data-set="0")
-                    img(src="/assets/logo.png")
+                    img(src="./assets/logo.png")
         .aboutMember
             h2 ACTUALLY HUMAN
             .member-container
@@ -14,7 +14,7 @@ block container
             h2 WANT A OFFICE TOUR
             .blackScreen
                 .button(data-set="1")
-                    img(src="/assets/logo.png")
+                    img(src="./assets/logo.png")
         .contact-us
             .container
                 p.title STAY IN THE LOOP
@@ -28,4 +28,4 @@ block container
 block footer
     include _footer.pug
 block scripts
-    script(src="../js/about.js" type="module")
+    script(src="./js/about.js" type="module")

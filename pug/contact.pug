@@ -1,6 +1,6 @@
 extends _layout.pug
 block style
-     link( rel="stylesheet" href="/css/contact.css")
+     link( rel="stylesheet" href="./css/contact.css")
 block container
     .contact
         .contact-us
@@ -15,7 +15,7 @@ block container
                     input#submit(type='submit', name='submit', value='Submit')
             .container
                 .icon.logo_icon
-                    img(src="/assets/logo.png")
+                    img(src="./assets/logo.png")
                 p.title STAY IN THE LOOP
                 .share
                     a.icon(href="https://www.youtube.com/channel/UCHsA8rgzjoV7DXtRX8V9Qag" target="_blank")
@@ -29,4 +29,4 @@ block container
 block footer
     include _footer.pug
 block scripts
-    script(src="../js/contact.js" type="module")
+    script(src="./js/contact.js" type="module")
