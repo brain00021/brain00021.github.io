@@ -6,8 +6,26 @@ $xs: 550px;
 $xxs: 380px;
 
 $white: #FFF5EE;
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+@font-face {
+  font-family: "HanWangMingBlack";
+  src:url("../font/HanWangMingBlack.ttf");
+  src:url("../font/HanWangMingBlack.ttf") format('woff2'),             /* Super Modern Browsers */
+  url("../font/HanWangMingBlack.ttf") format('woff'),              /* Pretty Modern Browsers */
+  url("../font/HanWangMingBlack.ttf") format('truetype'),          /* Safari, Android, iOS */
+  url("../font/HanWangMingBlack.ttf") format('svg');
+  unicode-range: U+4E00-9FFF;              /* Legacy iOS */
+}
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src:url("../font/HanWangMingBlack.ttf");
+  src:url("../font/BebasNeue-Regular.ttf") format('woff2'),             /* Super Modern Browsers */
+  url("../font/BebasNeue-Regular.ttf") format('woff'),              /* Pretty Modern Browsers */
+  url("../font/BebasNeue-Regular.ttf") format('truetype'),          /* Safari, Android, iOS */
+  url("../font/BebasNeue-Regular.ttf") format('svg');
+  unicode-range: U+00-024F;              /* Legacy iOS */
+}
+
 
 @mixin rwd($vw: $md, $limit: max-width) {
 	@media all and (#{$limit}: $vw) {
@@ -15,7 +33,7 @@ $white: #FFF5EE;
 	}
 }
 *{
-  font-family: "Bebas Neue", "Noto Sans TC",sans-serif;
+  font-family:BebasNeue-Regular, HanWangMingBlack;
 }
 
 .button{

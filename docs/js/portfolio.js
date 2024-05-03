@@ -96,7 +96,7 @@ $(function async(){
             console.log(swiper.activeIndex,profilo[i],'testInit')
      
             videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
-                <iframe id="youtube${profilo[i].name}${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
+                <iframe id="youtube${profilo[i].name}${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  allow='autoplay' allowfullscreen  frameborder="0"></iframe>
             `)
 
 
@@ -125,7 +125,7 @@ $(function async(){
             $('.dialog').show()
             $('#dialog-wrapper').empty();
             $('#dialog-wrapper').append(`
-                <iframe id="youtube${mainSet+1}" class="dialogvideo" src="https://www.youtube.com/embed/${youtube_parser(getURL)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(getURL)}"  frameborder="0"></iframe>
+                <iframe id="youtube${mainSet+1}" class="dialogvideo" src="https://www.youtube.com/embed/${youtube_parser(getURL)}?rel=0&autoplay=1&loop=1&enablejsapi=1&showinfo=0"   allow='autoplay' allowfullscreen  frameborder="0"></iframe>
             `)
             // do something here
         });

@@ -29,14 +29,11 @@ body.overflow{
     .aboutDrBeauty1{
         width:100%;
         height:100vh;
-        background:url(../assets/KVN_1104-86.jpg);
+        background: url(../assets/beautypage_frontpic1.jpg) no-repeat center center;
         background-size: cover;
         position: sticky;
         top:0;
         // background-position: -300px;
-        @include rwd($lg,min-width){
-            background-position: 0 -300px ;
-        }
     }
 }
 .drBeautyDialog{
@@ -60,7 +57,7 @@ body.overflow{
         z-index: 10;
         padding: 30px;
         background: rgba(#000,.3);
-        border-radius: 30px;
+        border-radius: 15px;
         max-height: 100vh;
         margin: auto;
         .content{
