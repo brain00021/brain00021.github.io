@@ -1,7 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&display=swap");
+@font-face {
+  font-family: "HanWangMingBlack";
+  src: url("../font/HanWangMingBlack.ttf");
+  src: url("../font/HanWangMingBlack.ttf") format("woff2"), url("../font/HanWangMingBlack.ttf") format("woff"), url("../font/HanWangMingBlack.ttf") format("truetype"), url("../font/HanWangMingBlack.ttf") format("svg");
+  unicode-range: U+4E00-9FFF; /* Legacy iOS */
+}
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("../font/HanWangMingBlack.ttf");
+  src: url("../font/BebasNeue-Regular.ttf") format("woff2"), url("../font/BebasNeue-Regular.ttf") format("woff"), url("../font/BebasNeue-Regular.ttf") format("truetype"), url("../font/BebasNeue-Regular.ttf") format("svg");
+  unicode-range: U+00-024F; /* Legacy iOS */
+}
 * {
-  font-family: "Bebas Neue", "Noto Sans TC", sans-serif;
+  font-family: BebasNeue-Regular, HanWangMingBlack;
 }
 
 .button {
@@ -78,7 +88,6 @@
   height: fit-content;
   font-size: 7vw;
   max-width: 300px;
-  font-family: "Bebas Neue", sans-serif;
 }
 @media all and (min-width: 920px) {
   .profilo-text {
