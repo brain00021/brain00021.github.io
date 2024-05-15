@@ -24,22 +24,32 @@ $(function async(){
     for(let i = 0; i < memberData.length; i++) {
         $('.member-container').append(`
             <div class="member">
-                <div class="flip_wrap">
-                    <!--实现容器翻转-->
-                    <div class="flip">
-                        <!--正面-->
-                        <div class="side front">
-                            <img src="${memberData[i].member}" />
-                        </div>
-                        <!--反面-->
-                        <div class="side back">
-                            <p class="title">${memberData[i].title}</p>
-                            <p>${memberData[i].jobPos}</p>
-                        </div>
-                    </div>
+                <div class="member-profile member-profile${i + 1}">
                 </div>
+                <p class="title">${memberData[i].title}</p>
+            </div>
+        `);
+
+        // $('.member-container').append(`
+        //     <div class="member">
+        //         <div class="flip_wrap">
+        //             <!--实现容器翻转-->
+        //             <div class="flip">
+        //                 <!--正面-->
+        //                 <div class="side front">
+        //                     <img src="${memberData[i].member}" />
+        //                 </div>
+        //                 <!--反面-->
+        //                 <div class="side back">
+        //                     <p class="title">${memberData[i].title}</p>
+        //                     <p>${memberData[i].jobPos}</p>
+        //                 </div>
+        //             </div>
+        //         </div>
                
-            </div>`)
+        //     </div>`)
+
+
     }
     
     $('.videos-wrapper').on('click', '.button', function(){
