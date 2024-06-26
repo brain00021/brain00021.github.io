@@ -4,7 +4,12 @@
     overflow: hidden;
     text-align: center;
 }
-
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{
+    @include rwd($md){
+        transform: scale(1);
+    }
+   
+}
 
 #portfolio-header{
     // padding-left:350px;

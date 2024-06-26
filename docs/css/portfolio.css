@@ -28,6 +28,13 @@
   text-align: center;
 }
 
+@media all and (max-width: 920px) {
+  .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next, .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 #portfolio-header {
   z-index: 998;
   top: 0;

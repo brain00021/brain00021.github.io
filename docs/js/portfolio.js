@@ -154,11 +154,17 @@ var stopAllYouTubeVideos = () => {
     const initSwiper = () => {
         let swiper = new Swiper('.profilo-swiper', {
             spaceBetween: 0,
-            slidesPerView: 4,
+            slidesPerView: 'auto',
             slideToClickedSlide: true,
             // loop: true,
             // mousewheel: true,
             // observer: true
+            breakpoints: {
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 0,
+                },
+            },
         });
     }
     initSwiper();
