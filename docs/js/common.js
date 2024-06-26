@@ -14,16 +14,46 @@ $(()=>{
         'about': 'ABOUT',
         'index': 'HOME'
     }
+
     var page = path.split("/").pop().replace('.html','');
 
+
     const pageName = titleCheck[page] || 'HOME';
+    $(`.menu > a[data-slide='${page}']`).addClass('active');
+    debugger;
 
     $('#toggle-link').find('span').text(pageName)
+    function debounce(func, timeout = 300){
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+    }
+    $(window).resize(debounce(function(){
+        let windowWidth = window.innerWidth;
+        if(windowWidth > 780){
+            $('#toggle').off();
+            $('#toggle').on('mouseover',function(){
+                $(this).addClass('on')
+                $('.header').addClass('openMenu')
+            })
+            $('.header').on('mouseleave',function(){
+                $('#toggle').removeClass('on')
+                $('.header').removeClass('openMenu')
+            })
+        }else{
+            $('#toggle').off();
+            $('.header').off();
+            $('#toggle').on('click',function(){
+                $(this).toggleClass('on')
+                $('.header').toggleClass('openMenu')
+            })
+        }
+    
+})).resize();
 
-    $('#toggle').on('click',function(){
-        $(this).toggleClass('on')
-        $('.header').toggleClass('openMenu')
-    })
+
     
     $('.dialog').hide()
     $('.close').on('click',function(){

@@ -24,6 +24,10 @@
                 max-width:988px;
                 margin:auto;
                 height: 50vh;
+                @include rwd($md){
+                    width:90vw;
+                    height:70vh;
+                }
             }
         }
         .close{
@@ -44,6 +48,9 @@
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             transform: rotate(-45deg);
+            @include rwd($md){
+                right:-10px;
+            }
         }
     }
 }

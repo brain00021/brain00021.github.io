@@ -1,6 +1,6 @@
 @import 'mixin';
 .button{
-
+    position: relative;
     img{
         width:50px;
         height:50px;
@@ -8,6 +8,9 @@
 }
 
 .aboutVideos1{
+    @include rwd($md){
+        display: none;
+    }
     .blackScreen{
         flex-direction: column;
     }
@@ -133,13 +136,41 @@ h2{
     background:url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/dda0dc198340321.6645fb865480b.png') repeat-x bottom center;
     background-size:1000px;
     min-width:1000px;
+    @include rwd($md){
+        display: none;
+    }
 
 }
 .aboutVideos2{
-    h2{
+    h2:not(.mob){
         z-index: 100;
         top:0;
+        @include rwd($md){
+            display: none;
+        }
     }
+    h2.mob{
+        width:50px;
+        height:50px;
+        position: absolute;
+        bottom:-150px;
+        font-size: 22px;
+        text-align: left;
+        top: 25px;
+        right: -50px;
+        @include rwd($md,min-width){
+            display: none;
+        }
+    }
+}
+.mob-member-bg {
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/968599198340321.66461e9a46731.png) no-repeat center bottom;
+    background-size: cover;
+    height: 40%;
+    width: 98%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
 }
 .aboutMember{
     .member{
@@ -378,6 +409,9 @@ h2{
     background:#000 url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/968599198340321.66461e9a46731.png') no-repeat center bottom;
     // opacity: 0.5;
     background-size: cover;
+    @include rwd($md){
+        display: none;
+    }
     // &:after{
     //     content: '';
     //     display: block;

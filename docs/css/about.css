@@ -22,11 +22,19 @@
           filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
 }
 
+.button {
+  position: relative;
+}
 .button img {
   width: 50px;
   height: 50px;
 }
 
+@media all and (max-width: 920px) {
+  .aboutVideos1 {
+    display: none;
+  }
+}
 .aboutVideos1 .blackScreen {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -185,10 +193,45 @@ h2 {
   background-size: 1000px;
   min-width: 1000px;
 }
+@media all and (max-width: 920px) {
+  .aboutMember {
+    display: none;
+  }
+}
 
-.aboutVideos2 h2 {
+.aboutVideos2 h2:not(.mob) {
   z-index: 100;
   top: 0;
+}
+@media all and (max-width: 920px) {
+  .aboutVideos2 h2:not(.mob) {
+    display: none;
+  }
+}
+.aboutVideos2 h2.mob {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: -150px;
+  font-size: 22px;
+  text-align: left;
+  top: 25px;
+  right: -50px;
+}
+@media all and (min-width: 920px) {
+  .aboutVideos2 h2.mob {
+    display: none;
+  }
+}
+
+.mob-member-bg {
+  background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/968599198340321.66461e9a46731.png) no-repeat center bottom;
+  background-size: cover;
+  height: 40%;
+  width: 98%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
 }
 
 .aboutMember .member {
@@ -441,6 +484,11 @@ h2 {
   position: relative;
   background: #000 url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/968599198340321.66461e9a46731.png") no-repeat center bottom;
   background-size: cover;
+}
+@media all and (max-width: 920px) {
+  .contact-us {
+    display: none;
+  }
 }
 .contact-us .title {
   text-align: center;
