@@ -219,7 +219,7 @@ body {
 }
 
 .share-link-title {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   text-align: left;
   margin-bottom: 0;
@@ -366,6 +366,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    min-width: 180px;
   }
   .header .share-wrapper .share-link .icon {
     color: #fff;

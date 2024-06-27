@@ -156,6 +156,7 @@ var stopAllYouTubeVideos = () => {
             spaceBetween: 0,
             slidesPerView: 'auto',
             slideToClickedSlide: true,
+            direction: "vertical",
             // loop: true,
             // mousewheel: true,
             // observer: true
@@ -163,6 +164,7 @@ var stopAllYouTubeVideos = () => {
                 768: {
                   slidesPerView: 4,
                   spaceBetween: 0,
+                  direction: "horizontal",
                 },
             },
         });
