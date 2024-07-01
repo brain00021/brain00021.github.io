@@ -22,6 +22,12 @@
           filter: invert(29%) sepia(100%) saturate(6488%) hue-rotate(356deg) brightness(88%) contrast(130%);
 }
 
+@media all and (max-width: 920px) {
+  .header .share-wrapper {
+    visibility: hidden;
+  }
+}
+
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,8 +42,30 @@
       -ms-flex: 1;
           flex: 1;
 }
+@media all and (max-width: 920px) {
+  .contact .contact-form {
+    display: none;
+  }
+}
 .contact .contact-form .text:nth-child(2) {
   margin-top: 2%;
+}
+@media all and (max-width: 920px) {
+  .contact .share-wrapper {
+    display: none;
+  }
+}
+.contact .sub_title {
+  color: #FFF5EE;
+  text-align: center;
+  letter-spacing: 1px;
+  display: none;
+}
+@media all and (max-width: 920px) {
+  .contact .sub_title {
+    display: block;
+    margin-top: 0.5em;
+  }
 }
 .contact .contact-us {
   position: relative;
@@ -114,6 +142,21 @@
 .contact .container .title {
   text-align: center;
 }
+@media all and (max-width: 920px) {
+  .contact .container .title {
+    display: none;
+  }
+}
+.contact .container .mob_title {
+  display: none;
+}
+@media all and (max-width: 920px) {
+  .contact .container .mob_title {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+}
 .contact .container .share {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,6 +164,15 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+@media all and (max-width: 920px) {
+  .contact .container .share {
+    font-size: 20pt;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 .contact .container .share .icon {
   margin: 0 5%;
@@ -135,6 +187,12 @@
   height: 100vh;
   position: absolute;
 }
+.contact .videos-wrapper .iframe-videos {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
 .contact .videos-wrapper .blackScreen {
   position: absolute;
   top: 0;
@@ -145,7 +203,11 @@
   z-index: 10;
 }
 .contact .videos-wrapper iframe {
+  width: var(--video-width);
+  height: var(--video-height);
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

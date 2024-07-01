@@ -61,6 +61,29 @@ body.overflow {
           transform: translate(0, 20%);
 }
 
+.beauty-short-description {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 5;
+  font-size: 1.2em;
+  display: none;
+}
+@media all and (max-width: 920px) {
+  .beauty-short-description {
+    display: block;
+  }
+}
+.beauty-short-description h6 {
+  font-size: 15pt;
+}
+.beauty-short-description p {
+  margin-bottom: 0.5em;
+}
+
 .drBeautyContent .aboutDrBeauty1 {
   width: 100%;
   height: 100vh;
@@ -68,6 +91,11 @@ body.overflow {
   background-size: cover;
   position: sticky;
   top: 0;
+}
+@media all and (max-width: 920px) {
+  .drBeautyContent .aboutDrBeauty1 {
+    display: none;
+  }
 }
 
 .drBeautyDialog {
@@ -203,6 +231,11 @@ h2 {
   position: relative;
   z-index: 100;
 }
+@media all and (max-width: 920px) {
+  .contact-us {
+    display: none;
+  }
+}
 .contact-us .container {
   position: relative;
   z-index: 100;
@@ -286,6 +319,15 @@ h2 {
   position: relative;
   overflow: hidden;
 }
+.profilo iframe {
+  width: var(--video-width);
+  height: var(--video-height);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 .profilo #swiper-pagination {
   position: absolute;
   left: 0%;
@@ -307,6 +349,11 @@ h2 {
   height: fit-content;
   cursor: pointer;
 }
+@media all and (max-width: 920px) {
+  .profilo #swiper-pagination {
+    display: none;
+  }
+}
 .profilo #swiper-pagination .pagination-subtitle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,11 +372,6 @@ h2 {
 .profilo #swiper-pagination span {
   font-size: 15pt;
   color: #FFF5EE;
-}
-
-.profilo-swiper iframe {
-  width: 100%;
-  height: 100vh;
 }
 
 .profilo-swiper {

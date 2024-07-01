@@ -92,6 +92,7 @@
 @media all and (max-width: 920px) {
   .dialog .dialogFrame .close {
     right: -10px;
+    top: -80px;
   }
 }
 

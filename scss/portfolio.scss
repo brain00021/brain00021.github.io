@@ -82,9 +82,9 @@
     bottom:10%;
     /* bottom: 0; */
     z-index: 99;
-    left: 2%;
+    left: 15px;
     height: fit-content;
-    font-size: 7vw;
+    font-size: 48px;
     @include rwd($md,min-width){
         font-size:5em;
     }
@@ -129,6 +129,9 @@
         max-width: 40vw;
         height:fit-content;
         cursor: pointer;
+        @include rwd($md){
+            display: none;
+        }
         .pagination-subtitle{
             display: flex;
             width:fit-content;

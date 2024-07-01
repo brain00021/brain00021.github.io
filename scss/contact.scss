@@ -1,4 +1,10 @@
 @import 'mixin';
+.header .share-wrapper{
+    @include rwd($md){
+        // display: none;
+        visibility: hidden;
+    }
+}
 .contact{
     display: flex;
     .contact-us{
@@ -7,8 +13,26 @@
     }
     .contact-form{
         flex:1;
+        @include rwd($md){
+            display: none;
+        }
         .text:nth-child(2){
             margin-top:2%;
+        }
+    }
+    .share-wrapper{
+        @include rwd($md){
+            display: none;
+        }
+    }
+    .sub_title {
+        color:$white;
+        text-align: center;
+        letter-spacing: 1px;
+        display: none;
+        @include rwd($md){
+            display: block;
+            margin-top:0.5em;
         }
     }
     .contact-us{
@@ -76,11 +100,27 @@
 
         .title{
             text-align: center;
+            @include rwd($md){
+                display: none;
+            }
             // margin-top:10px;
+        }
+        .mob_title{
+            display: none;
+            @include rwd($md){
+                display: block;
+                text-align: center;
+                margin-bottom: 0.5em;
+            }
         }
         .share{
             display: flex;
             justify-content: center;
+            @include rwd($md){
+                font-size: 20pt;
+                width: 100%;
+                justify-content: space-between;
+            }
             .icon{
                 margin:0 5%;
                 color:$white;
@@ -95,6 +135,12 @@
         width:100%;
         height:100vh;
         position: absolute;
+        .iframe-videos{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
         .blackScreen{
             position: absolute;
             top:0;
@@ -105,11 +151,12 @@
             z-index: 10;
         }
         iframe{
+            width: var(--video-width);
+            height: var(--video-height);
             position: absolute;
-            width: 100%;
-            height:100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
-
-
 }

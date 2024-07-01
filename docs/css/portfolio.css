@@ -116,11 +116,11 @@
   bottom: 10%;
   /* bottom: 0; */
   z-index: 99;
-  left: 2%;
+  left: 15px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 7vw;
+  font-size: 48px;
   max-width: 300px;
 }
 @media all and (min-width: 920px) {
@@ -181,6 +181,11 @@
   height: -moz-fit-content;
   height: fit-content;
   cursor: pointer;
+}
+@media all and (max-width: 920px) {
+  .profilo .swiper-pagination-bullets.swiper-pagination {
+    display: none;
+  }
 }
 .profilo .swiper-pagination-bullets.swiper-pagination .pagination-subtitle {
   display: -webkit-box;

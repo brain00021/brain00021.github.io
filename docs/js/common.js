@@ -20,7 +20,6 @@ $(()=>{
 
     const pageName = titleCheck[page] || 'HOME';
     $(`.menu > a[data-slide='${page}']`).addClass('active');
-    debugger;
 
     $('#toggle-link').find('span').text(pageName)
     function debounce(func, timeout = 300){
