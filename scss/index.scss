@@ -6,18 +6,27 @@
 
 .mob-context{
   position: absolute;
-  right:0;
-  width:50%;
+  right: 0;
+  width: 50%;
   z-index: 10;
-  height:100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  padding-bottom: 55px;
+  padding-bottom: 65px;
   padding-right: 10px;
   font-size: 20px;
   line-height: 22px;
   text-align: right;
   pointer-events: none;
+  justify-content: flex-end;
+  flex-direction: column;
+  p{
+    margin-bottom: 0.2em;
+  }
   @include rwd($md,min-width){
     display: none;
   }
