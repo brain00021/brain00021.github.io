@@ -67,6 +67,12 @@
   overflow: hidden;
   position: relative;
 }
+@media all and (max-width: 920px) {
+  .indexSwiper {
+    position: absolute;
+    height: 100%;
+  }
+}
 .indexSwiper .button {
   cursor: pointer;
 }
@@ -86,6 +92,11 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+}
+@media all and (max-width: 920px) {
+  .indexSwiper .wrapper {
+    height: 100%;
+  }
 }
 .indexSwiper .blackScreen {
   position: absolute;
@@ -126,9 +137,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.swiper-slide .wrapper {
-  height: 100vh;
 }
 
 .swiper-pagination {
