@@ -65,7 +65,7 @@
 @media all and (max-width: 920px) {
   .contact .sub_title {
     display: block;
-    margin-top: 0.5em;
+    margin-top: 2em;
   }
 }
 .contact .contact-us {
