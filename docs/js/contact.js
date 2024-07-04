@@ -19,5 +19,8 @@ $(function async(){
     })
     
     const footer =  $('.footer').innerHeight();
-    $('.contact-us').css('height',`calc(100vh - ${footer+1}px)`)
+    if(window.innerWidth > 960){
+        $('.contact-us').css('height',`calc(100vh - ${footer+1}px)`)
+    }
+    
 })

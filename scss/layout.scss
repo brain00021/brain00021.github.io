@@ -109,7 +109,11 @@ body{
     padding-bottom: 20px;
 
 }
-
+.swiper-pagination{
+    &.openMenu{
+        display: none !important;
+    }
+}
 .share-link{
     .icon{
         display:flex;
@@ -205,7 +209,7 @@ body{
     .share-wrapper{
         display: none;
         @include rwd($md){
-            display: flex;
+            // display: flex;
             flex-direction: column;
             padding-bottom:10px;
             .share-link-title{
@@ -231,6 +235,9 @@ body{
             background:rgba(#000,.5);
             .open-link{
                 margin-top:-120px;
+            }
+            .share-wrapper{
+                display: flex;
             }
         }
         @include rwd($md,min-width){

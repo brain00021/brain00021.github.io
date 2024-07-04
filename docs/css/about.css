@@ -228,10 +228,11 @@ h2 {
   background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/968599198340321.66461e9a46731.png) no-repeat center bottom;
   background-size: cover;
   height: 40%;
-  width: 98%;
-  position: absolute;
+  width: 100%;
+  position: fixed;
   bottom: 0;
   z-index: 10;
+  pointer-events: none;
 }
 
 .aboutMember .member {

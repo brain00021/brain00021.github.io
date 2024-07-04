@@ -60,6 +60,7 @@
   text-align: center;
   letter-spacing: 1px;
   display: none;
+  white-space: nowrap;
 }
 @media all and (max-width: 920px) {
   .contact .sub_title {

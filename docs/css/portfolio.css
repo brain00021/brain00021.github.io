@@ -207,8 +207,8 @@
     display: flex;
     background-color: #444444;
     border-radius: 10px;
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    -webkit-transform: translateX(10px) translateY(-50%);
+            transform: translateX(10px) translateY(-50%);
   }
   .profilo .swiper-pagination-bullets.swiper-pagination .swiper-pagination-bullet {
     margin: 5px;

@@ -30,6 +30,7 @@
         text-align: center;
         letter-spacing: 1px;
         display: none;
+        white-space:nowrap;
         @include rwd($md){
             display: block;
             margin-top:0.5em;

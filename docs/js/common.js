@@ -40,6 +40,7 @@ $(()=>{
             $('.header').on('mouseleave',function(){
                 $('#toggle').removeClass('on')
                 $('.header').removeClass('openMenu')
+
             })
         }else{
             $('#toggle').off();
@@ -47,6 +48,10 @@ $(()=>{
             $('#toggle').on('click',function(){
                 $(this).toggleClass('on')
                 $('.header').toggleClass('openMenu')
+                let setPagination = $('.swiper-pagination');
+                if(setPagination.length > 0){
+                    setPagination.toggleClass('openMenu')
+                }
             })
         }
     
