@@ -356,9 +356,29 @@ h2 {
   height: fit-content;
   cursor: pointer;
 }
+.profilo #swiper-pagination .swiper-pagination-bullet {
+  margin: 20px;
+  background-color: transparent;
+}
 @media all and (max-width: 920px) {
   .profilo #swiper-pagination {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #444444;
+    border-radius: 10px;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  .profilo #swiper-pagination .swiper-pagination-bullet {
+    margin: 5px;
+    background: #eee;
+    margin-bottom: 10px;
+    min-height: 8px;
+    min-width: 8px;
+  }
+  .profilo #swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #fff;
   }
 }
 .profilo #swiper-pagination .pagination-subtitle {
@@ -370,10 +390,6 @@ h2 {
   width: fit-content;
 }
 .profilo #swiper-pagination .swiper-pagination-bullet-active {
-  background-color: transparent;
-}
-.profilo #swiper-pagination .swiper-pagination-bullet {
-  margin: 20px;
   background-color: transparent;
 }
 .profilo #swiper-pagination span {

@@ -61,13 +61,30 @@ $(function async(){
                 el: ".swiper-pagination",
                 clickable: true,
                 dynamicBullets: true,
-                renderBullet: function (index, className) {
-                    return `
-                        <div class="pagination-subtitle ${className}" >
-                            <span class="text"> ${profilo[i].profilo[index].title}</span>
-                        </div>
-                    `;
-                }
+                // renderBullet: function (index, className) {
+                //     return `
+                //         <div class="pagination-subtitle ${className}" >
+                //             <span class="text"> ${profilo[i].profilo[index].title}</span>
+                //         </div>
+                //     `;
+                // }
+            },
+
+            breakpoints: {
+                988: {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                        dynamicBullets: true,
+                        renderBullet: function (index, className) {
+                            return `
+                                <div class="pagination-subtitle ${className}" >
+                                    <span class="text"> ${profilo[i].profilo[index].title}</span>
+                                </div>
+                            `;
+                        }
+                    },
+                },
             },
         });
         currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}

@@ -30,13 +30,20 @@ $(function async(){
                 el: ".swiper-pagination",
                 clickable: true,
                 dynamicBullets: true,
-                renderBullet: function (index, className) {
-                    return `
-                        <div class="pagination-subtitle ${className}" >
-                            <span class="text"> ${drBeautyVideos[index].title}</span>
-                        </div>
-                    `;
-                }
+
+            },
+            breakpoints: {
+                988: {
+                    pagination: {
+                        renderBullet: function (index, className) {
+                            return `
+                                <div class="pagination-subtitle ${className}" >
+                                    <span class="text"> ${drBeautyVideos[index].title}</span>
+                                </div>
+                            `;
+                        }
+                    },
+                },
             },
         });
         swiper.on('slideChange', function () {

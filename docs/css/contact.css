@@ -94,6 +94,7 @@
 .contact .contact-us .container .logo_icon {
   width: 100%;
   margin: auto;
+  max-width: 256px;
 }
 .contact .contact-us .text {
   min-width: 300px;
@@ -155,6 +156,21 @@
     display: block;
     text-align: center;
     margin-bottom: 0.5em;
+    font-size: 23px;
+    position: relative;
+    top: -10px;
+    margin-bottom: 0px;
+  }
+}
+.contact .container .mob_subTitle {
+  display: none;
+}
+@media all and (max-width: 920px) {
+  .contact .container .mob_subTitle {
+    display: block;
+    font-size: 30px;
+    margin: 1em auto;
+    text-align: center;
   }
 }
 .contact .container .share {

@@ -277,8 +277,27 @@ h2{
         max-width: 350px;
         height:fit-content;
         cursor: pointer;
+        .swiper-pagination-bullet{
+            margin:20px;
+            background-color: transparent;
+        }
         @include rwd($md){
-            display:none;
+            display:flex;
+            // padding:10px 0;
+            background-color: #444444;
+            border-radius: 10px;
+            transform: translateX(10px);
+            .swiper-pagination-bullet{
+                margin:5px;
+                background:#eee;
+                margin-bottom: 10px;
+
+                min-height: 8px;
+                min-width: 8px;
+                &.swiper-pagination-bullet-active{
+                    background:#fff;
+                }
+            }
         }
         .pagination-subtitle{
             display: flex;
@@ -289,10 +308,7 @@ h2{
            
             background-color: transparent;
         }
-        .swiper-pagination-bullet{
-            margin:20px;
-            background-color: transparent;
-        }
+
         span{
             font-size:15pt;
             color:$white;
