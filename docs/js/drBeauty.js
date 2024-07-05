@@ -17,7 +17,6 @@ $(function async(){
         $('body').removeClass('overflow')
     })
 
-
     const initSwiper = () => {
         let swiper = new Swiper('.profilo-swiper', {
             slidesPerView:1,
@@ -46,20 +45,51 @@ $(function async(){
                 },
             },
         });
-        swiper.on('slideChange', function () {
-            // console.log(swiper.activeIndex,profilo[i],'test')
-            // updateIframe();
-            stopAllYouTubeVideos();
+        const debounce = (func, delay) => {
+            let debounceTimer
+            return function () {
+                const context = this
+                const args = arguments
+                clearTimeout(debounceTimer)
+                debounceTimer
+                    = setTimeout(() => func.apply(context, args), delay)
+            }
+        }
+
+        let storeForIframe = [];
+        if(storeForIframe.length < 1){
+            updateIframe()
+        }
+        function updateIframe () {
             let currentIndex = swiper.activeIndex;
+            if(storeForIframe.indexOf(currentIndex) !== -1) {
+                return;
+            };
+            storeForIframe.push(currentIndex);
+            let currentIframe = $('.profilo-swiper').find(`.wrapper${currentIndex}`);
+            currentIframe.append(`<iframe id="youtube${currentIndex+1}" class="video" src="${drBeautyVideos[currentIndex].url}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(drBeautyVideos[currentIndex].url)}"  frameborder="0" allowfullscreen></iframe>`)
+            
+        }
+        const swiperUpdate = async ()=>{
+                // console.log(swiper.activeIndex,profilo[i],'test')
+                // updateIframe();
+                stopAllYouTubeVideos();
+                updateIframe();
+                let currentIndex = swiper.activeIndex;
+        
+                let iframe = document.getElementById(`youtube${currentIndex+1}`);
+                // currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
+                iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                // let currentIndex = swiper.activeIndex;
+                // let currentUrl = profilo[i].profilo[currentIndex].url;
+                // videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
+                //     <iframe id="youtube${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
+                // `)
+        }
     
-            let iframe = document.getElementById(`youtube${currentIndex+1}`);
-            // currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
-            iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-            // let currentIndex = swiper.activeIndex;
-            // let currentUrl = profilo[i].profilo[currentIndex].url;
-            // videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
-            //     <iframe id="youtube${currentIndex+1}" class="video" src="https://www.youtube.com/embed/${youtube_parser(currentUrl)}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(currentUrl)}"  frameborder="0" allowfullscreen></iframe>
-            // `)
+        const debounceSwiper = debounce(swiperUpdate, 400)
+        swiper.on('slideChange', function () {
+            debounceSwiper();
         });
     }
 
@@ -71,13 +101,13 @@ $(function async(){
             element.append(`
             <div class="swiper-slide">
                 
-                <div class="wrapper">
+                <div class="wrapper wrapper${i}">
                     <div class="blackScreen">
                         <div class="button" data-set="${i}" >
                             <img src="./assets/logo.png"/>
                         </div>
                     </div>
-                    <iframe id="youtube${i+1}" class="video" src="${drBeautyVideos[i].url}?rel=0&loop=1&amp;autoplay=1&mute=1&enablejsapi=1&showinfo=0&playlist=${youtube_parser(drBeautyVideos[i].url)}"  frameborder="0" allowfullscreen></iframe>
+                    
                 </div>
             </div>`)
             i++
@@ -104,6 +134,7 @@ $(function async(){
     const gogo = async() =>{
         await init();
         await initSwiper();
+        await debounceSwiper();
     }
 
     $('#submit').on('click', function(event){
@@ -114,4 +145,5 @@ $(function async(){
         window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
     })
     gogo();
+
 })

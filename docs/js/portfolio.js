@@ -118,16 +118,31 @@ $(function async(){
 
 
         }
-       
-        swiper.on('slideChange', function () {
-            // console.log(swiper.activeIndex,profilo[i],'test')
-            updateIframe();
-            stopAllYouTubeVideos();
+        const debounce = (func, delay) => {
+            let debounceTimer
+            return function () {
+                const context = this
+                const args = arguments
+                clearTimeout(debounceTimer)
+                debounceTimer
+                    = setTimeout(() => func.apply(context, args), delay)
+            }
+        }
+        const swiperUpdate = async() =>{
+            console.log('service')
+            await updateIframe();
+            await stopAllYouTubeVideos();
             let currentIndex = swiper.activeIndex;
 
             let iframe = document.getElementById(`youtube${profilo[i].name}${currentIndex+1}`);
             currentSwiper = {...currentSwiper, [profilo[i].name]: swiper.activeIndex}
             iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+        }
+        const debounceSwiper =  debounce(swiperUpdate, 800)
+        swiper.on('slideChange', async function() {
+            // console.log(swiper.activeIndex,profilo[i],'test')
+           
+            debounceSwiper();
             // let currentIndex = swiper.activeIndex;
             // let currentUrl = profilo[i].profilo[currentIndex].url;
             // videosElement.find(`.videos[data-set="${profilo[i].name}"]`).find('.swiper-wrapper').find(`.wrapper${currentIndex}`).append(`
