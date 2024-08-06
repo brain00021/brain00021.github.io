@@ -3,6 +3,9 @@ let data = {
     homeVideos:[{
         id: 'home-videos1',
         url:'https://www.youtube.com/embed/Ffli-o0ocT0?si=zeLjtzglBG7qmga1'
+    },{
+      id: 'home-videos2',
+      url:'https://www.youtube.com/embed/Asqih2ftbdc?si=CzKdVsAOvd41FNgE'
     }],
     // about Page
     aboutVideos:[{

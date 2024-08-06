@@ -235,6 +235,11 @@ h2 {
   z-index: 10;
   pointer-events: none;
 }
+@media all and (min-width: 920px) {
+  .mob-member-bg {
+    display: none;
+  }
+}
 
 .aboutMember .member {
   z-index: 10;

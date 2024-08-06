@@ -173,6 +173,9 @@ h2{
     bottom: 0;
     z-index: 10;
     pointer-events: none;
+    @include rwd($md,min-width){
+        display: none;
+    }
 }
 .aboutMember{
     .member{
