@@ -162,7 +162,7 @@ let data = {
           {
             id: 'tv1',
             title: 'The Rappers 2 - Xieh Gan',
-            url:'https://youtu.be/PrE9j9r0Ewo?si=0xUo6Ol8yvwvrrcy',
+            url:'https://www.youtube.com/watch?v=xvF3QPhuewY',
             author: 'Xieh Gan',
             date:2023
           }
